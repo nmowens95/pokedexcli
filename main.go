@@ -1,19 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
-	for {
-		fmt.Println("Type in a command or q to exit: ")
-		var input string
-		fmt.Scanln(&input)
-		if input == "q" {
-			break
-		} else {
-			continue
-		}
-	}
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Println("Pokedex > ")
+	scanner.Scan()
+	input := scanner.Text()
+	fmt.Printf("Youre text was: %v \n", input)
 }
+
+/*
+var cliName string = "Pokedex"
+// printPrompt displays repl prompt at the beg of each loop
+func printPrompt() {
+	fmt.Print(cliName, "> ")
+}
+
+// informs user about invalid inputs
+func printUnknown(text string) {
+	fmt.Println(text, ": command not found")
+}
+
+
 
 type PDex interface {
 	commandHelp()
@@ -26,11 +39,11 @@ type cliCommand struct {
 		callback func() error
 }
 
-func commandHelp() string {
-	
+func commandHelp(string) string {
+
 }
 
-return map[string]cliCommand{
+return map[string]cliCommand {
 	"help": {
 		name: "help",
 		desription: "Display a help message",
@@ -42,3 +55,4 @@ return map[string]cliCommand{
 		callback: commandExit,
 	},
 }
+*/
