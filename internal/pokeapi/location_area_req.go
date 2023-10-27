@@ -23,7 +23,7 @@ func (c *Client) ListLocationAreas() (LocationAreasResp, error) {
 	defer resp.Body.Close()
 
 	if resp.StatusCode > 399 {
-		return LocationAreasResp{}, fmt.Errorf("Bad status code: %v", resp.StatusCode)
+		return LocationAreasResp{}, fmt.Errorf("bad status code: %v", resp.StatusCode)
 	}
 
 	dat, err := io.ReadAll(resp.Body)
