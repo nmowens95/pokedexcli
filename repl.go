@@ -41,23 +41,27 @@ func cleanInput(str string) []string {
 }
 
 type cliCommand struct {
-	name		string
+	name        string
 	description string
-	callback	func() error
+	callback    func() error
 }
 
 func getCommands() map[string]cliCommand {
-	return map[string]cliCommand {
+	return map[string]cliCommand{
 		"help": {
-			name: "help",
+			name:        "help",
+			description: "List some areas",
+			callback:    commandHelp,
+		},
+		"map": {
+			name:        "map",
 			description: "Displays a help message",
-			callback: commandHelp,
+			callback:    callbackMap,
 		},
 		"exit": {
-			name: "exit",
+			name:        "exit",
 			description: "Exit the program",
-			callback: commandExit,
+			callback:    commandExit,
 		},
 	}
 }
-
