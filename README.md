@@ -19,15 +19,17 @@ To use this project, from the command line run:
 ```bash
   go build && ./pokedexcli
 ```
-## Lessons Learned
 
+## Lessons Learned
 
 - How to make use an api and use it for different endpoint
 - Making use of a go routine, mutexes and pointers
 - How to make a unit text in go
 - Managed different packages and how they interact specific to go
 - Working with a Repl style project from the command line
+
 ## Roadmap
+
 - Update the CLI to support the "up" arrow to cycle through previous commands
 - Simulate battles between pokemon
 - Add more unit tests
